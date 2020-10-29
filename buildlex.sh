@@ -1,0 +1,1 @@
+flex -o ./src/Application.cpp ./src/Application.l
