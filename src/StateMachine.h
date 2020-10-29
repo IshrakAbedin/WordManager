@@ -49,7 +49,7 @@ public:
 	inline States GetState() const { return m_State; }
 
 	std::string ProcessWord(const std::string word);
-	void AddWord(const std::string word);
+	bool AddWord(const std::string word);
 	std::string RetrieveWord(const std::string word);
 	inline void Save() const { m_Core.SaveMemory(); }
 	inline void Load() { m_Core.LoadMemory(); }

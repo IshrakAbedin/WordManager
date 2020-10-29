@@ -855,22 +855,20 @@ case 16:
 YY_RULE_SETUP
 #line 36 ".\\src\\Application.l"
 {
-	smachine->GetState() == StateMachine::States::LOOKUP ? 
-		fmt::print("-- {0}: {1}\n", yytext, smachine->ProcessWord(yytext))
-		: fmt::print("-- {0}: {1}\n", smachine->ProcessWord(yytext), yytext);
+		fmt::print("{0}\n", smachine->ProcessWord(yytext));
 }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 41 ".\\src\\Application.l"
+#line 39 ".\\src\\Application.l"
 ;
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 42 ".\\src\\Application.l"
+#line 40 ".\\src\\Application.l"
 ECHO;
 	YY_BREAK
-#line 873 ".\\src\\Application.cpp"
+#line 871 ".\\src\\Application.cpp"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1878,7 +1876,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 42 ".\\src\\Application.l"
+#line 40 ".\\src\\Application.l"
 
 
 int yywrap(void)

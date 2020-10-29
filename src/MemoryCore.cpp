@@ -49,7 +49,7 @@ namespace mcore
 		}
 		else
 		{
-			fmt::print("[Warning]: Failed to read from save file\n");
+			fmt::print("-- [Warning]: Failed to read from save file\n");
 		}
 	}
 
@@ -65,7 +65,7 @@ namespace mcore
 		}
 		else
 		{
-			fmt::print("[Warning]: Failed to write to file [{}]\n", m_JsonPath);
+			fmt::print("-- [Warning]: Failed to write to file [{}]\n", m_JsonPath);
 		}
 	}
 }
