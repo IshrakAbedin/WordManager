@@ -34,7 +34,7 @@ StateMachine* smachine;
 ^_about { printAbout(); }
 ^_path { fmt::print("-- Working with save file {0}\n", smachine->GetSavePath()); }
 [a-zA-Z]+ {
-		fmt::print("{0}\n", smachine->ProcessWord(yytext));
+	fmt::print("{0}\n", smachine->ProcessWord(yytext));
 }
 . ;
 %%
