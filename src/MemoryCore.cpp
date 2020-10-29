@@ -7,12 +7,12 @@
 namespace mcore
 {
 	MemoryCore::MemoryCore(std::string saveFilePath)
-		: m_Maindict(ssdict()), m_JsonPath(saveFilePath)
+		: m_Maindict(ssdict()), m_JsonPath(fsys::absolute(saveFilePath).string())
 	{
 	}
     
 	MemoryCore::MemoryCore()
-        : MemoryCore("./data/data.json")
+        : MemoryCore(DefaultSavePath)
     {
     }
 
@@ -33,7 +33,7 @@ namespace mcore
 
     std::string MemoryCore::GetItem(const std::string key)
     {
-        return DoesKeyExist(key) ? m_Maindict[key] : "nf";
+        return DoesKeyExist(key) ? m_Maindict[key] : MCORE_NOTFOUND;
     }
 
 	void MemoryCore::LoadMemory()
@@ -49,7 +49,7 @@ namespace mcore
 		}
 		else
 		{
-			fmt::print("Failed to read from save file\n");
+			fmt::print("[Warning]: Failed to read from save file\n");
 		}
 	}
 
@@ -65,7 +65,7 @@ namespace mcore
 		}
 		else
 		{
-			fmt::print("Failed to write to file\n");
+			fmt::print("[Warning]: Failed to write to file [{}]\n", m_JsonPath);
 		}
 	}
 }

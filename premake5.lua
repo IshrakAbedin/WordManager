@@ -6,7 +6,7 @@ workspace "WordManager"
    kind "ConsoleApp"
    language "C++"
    cppdialect "C++17"
-   architecture "x86"
+   architecture "x64"
    targetdir "bin/%{cfg.buildcfg}"
 
    includedirs {
