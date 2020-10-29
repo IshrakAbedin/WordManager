@@ -5,13 +5,11 @@
 StateMachine::StateMachine(const std::string savePath)
 	: m_Core(mcore::MemoryCore(savePath)), m_State(StateMachine::States::LOOKUP)
 {
-	//Load();
 }
 
 StateMachine::StateMachine()
 	: m_Core(mcore::MemoryCore()), m_State(StateMachine::States::LOOKUP)
 {
-	//Load();
 }
 
 StateMachine::~StateMachine()
@@ -35,7 +33,7 @@ std::string StateMachine::ProcessWord(const std::string word)
 	case States::PREP:
 	case States::PRON:
 	case States::CONJ:
-		if(AddWord(word))
+		if (AddWord(word))
 			return fmt::format("-- Added \"{0}\" as \"{1}\"", word, StateNames[static_cast<int>(m_State)]);
 		else
 			return fmt::format("-- [Warning]: Failed to insert, key[{0}] already exists", word);

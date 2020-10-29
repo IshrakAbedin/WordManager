@@ -10,31 +10,31 @@ namespace mcore
 		: m_Maindict(ssdict()), m_JsonPath(fsys::absolute(saveFilePath).string())
 	{
 	}
-    
+
 	MemoryCore::MemoryCore()
-        : MemoryCore(DefaultSavePath)
-    {
-    }
+		: MemoryCore(DefaultSavePath)
+	{
+	}
 
-    MemoryCore::~MemoryCore()
-    {
-    }
+	MemoryCore::~MemoryCore()
+	{
+	}
 
-    bool MemoryCore::InsertItem(const std::string key, const std::string value)
-    {
-        if(DoesKeyExist(key))
-            return false;
-        else
-        {
-            m_Maindict[key] = value;
-            return true;
-        }
-    }
+	bool MemoryCore::InsertItem(const std::string key, const std::string value)
+	{
+		if (DoesKeyExist(key))
+			return false;
+		else
+		{
+			m_Maindict[key] = value;
+			return true;
+		}
+	}
 
-    std::string MemoryCore::GetItem(const std::string key)
-    {
-        return DoesKeyExist(key) ? m_Maindict[key] : MCORE_NOTFOUND;
-    }
+	std::string MemoryCore::GetItem(const std::string key)
+	{
+		return DoesKeyExist(key) ? m_Maindict[key] : MCORE_NOTFOUND;
+	}
 
 	void MemoryCore::LoadMemory()
 	{
@@ -68,4 +68,4 @@ namespace mcore
 			fmt::print("-- [Warning]: Failed to write to file [{}]\n", m_JsonPath);
 		}
 	}
-}
+} // namespace mcore

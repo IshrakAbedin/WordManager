@@ -19,19 +19,18 @@ public:
 		CONJ,
 		_COUNT // Use auto assignment for enum beginning with 0(zero), otherwise count will not work
 	};
-	const std::array<std::string, static_cast<int>(States::_COUNT) + 1> StateNames = 
-	{ 
-		"look up",
-		"unknown",
-		"verb",
-		"adjective",
-		"adverb",
-		"noun",
-		"preposition",
-		"pronoun",
-		"conjunction",
-		"_MANAGEMENT_COUNT_SHOULD_NOT_BE_USED_"
-	};
+	const std::array<std::string, static_cast<int>(States::_COUNT) + 1> StateNames =
+		{
+			"look up",
+			"unknown",
+			"verb",
+			"adjective",
+			"adverb",
+			"noun",
+			"preposition",
+			"pronoun",
+			"conjunction",
+			"_MANAGEMENT_COUNT_SHOULD_NOT_BE_USED_"};
 
 private:
 	mcore::MemoryCore m_Core;

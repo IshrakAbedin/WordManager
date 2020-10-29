@@ -19,35 +19,35 @@ namespace fsys = std::filesystem;
 
 namespace mcore
 {
-	constexpr char* DefaultSavePath = "data.json";
+    constexpr char *DefaultSavePath = "data.json";
     using ssdict = std::unordered_map<std::string, std::string>;
 
     class MemoryCore
     {
     private:
         ssdict m_Maindict;
-		std::string m_JsonPath;
-    
+        std::string m_JsonPath;
+
     public:
-		MemoryCore(std::string saveFilePath);
+        MemoryCore(std::string saveFilePath);
         MemoryCore();
         ~MemoryCore();
 
-		inline std::string GetSavePath() const { return m_JsonPath; }
-		inline void SetSavePath(const std::string savePath) { m_JsonPath = fsys::absolute(savePath).string(); }
+        inline std::string GetSavePath() const { return m_JsonPath; }
+        inline void SetSavePath(const std::string savePath) { m_JsonPath = fsys::absolute(savePath).string(); }
 
         bool InsertItem(const std::string key, const std::string value);
         std::string GetItem(const std::string key);
 
-		void LoadMemory();
-		void SaveMemory() const;
+        void LoadMemory();
+        void SaveMemory() const;
 
-        inline bool DoesKeyExist(const std::string key) const 
+        inline bool DoesKeyExist(const std::string key) const
         {
             return m_Maindict.find(key) == m_Maindict.end() ? false : true;
         }
 
         inline unsigned int GetItemCount() const { return m_Maindict.size(); }
-        inline ssdict& GetRefToDictionary() { return m_Maindict; }
-    }; 
-}
+        inline ssdict &GetRefToDictionary() { return m_Maindict; }
+    };
+} // namespace mcore
