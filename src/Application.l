@@ -61,7 +61,7 @@ int main(int argc, char** argv)
 	}
 	
 	fmt::print("-- Working with save file {0}\n", smachine->GetSavePath());
-#if AUTO_LOAD_DATA = 1
+#if AUTO_LOAD_DATA == 1
 	smachine->Load();
 	fmt::print("-- Data Loaded\n");
 #endif
@@ -96,7 +96,7 @@ void printHelp()
 	fmt::print("--[H] Use command <conj> followed by SPACE separated words to save conjunctions\n");
 	fmt::print("--[H] Just write SPACE separated words to search them\n");
 	fmt::print("--[H] Save file path can be set by passing single command line argument\n");
-	fmt::print("--[H] If no save file has is provided, default path is used\n\n");
+	fmt::print("--[H] If no save file path is provided, default path is used\n\n");
 }
 
 void printAbout()
