@@ -64,7 +64,7 @@ make config=debug
 make config=release
 ```
 ---
-The project is not tested with *Clang* but it should work. Alternative one can compile with GCC in Windows environment using *mingw* or *Cygwin* or any similar system.
+The project is not tested with *Clang* but it should work. Alternatively, one can compile with GCC in Windows environment using *mingw* or *Cygwin* or any similar system.
 
 ---
 ## Using the Application
